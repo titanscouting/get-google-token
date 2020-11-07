@@ -29,14 +29,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      run: npm build
+    - run: npm build
       env: 
         PUBLIC_URL: https://titanscouting.github.io/get-google-token
     - name: Deploy
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      run: git config --global user.email "actions@github.com" && git config --global user.name "GitHub Actions" && npm run deploy
+    - run: git config --global user.email "actions@github.com" && git config --global user.name "GitHub Actions" && npm run deploy
       env: 
         PUBLIC_URL: https://titanscouting.github.io/get-google-token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
