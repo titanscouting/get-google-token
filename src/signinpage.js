@@ -9,6 +9,7 @@ export default class SundaraNavbar extends Component {
   }
   responseGoogle = (response) => {
     this.setState({ tokenId: response.tokenId, loggedIn: true });
+    console.log(this.state.tokenId)
   }
   render() {
     return (
