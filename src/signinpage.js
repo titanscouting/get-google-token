@@ -9,10 +9,10 @@ export default class SundaraNavbar extends Component {
     console.log(`Get Google token tool - v${this.state.version}`)
   }
   responseGoogle = (response) => {
-    this.setState({ tokenId: response.tokenId, loggedIn: true });
+    this.setState({ tokenId: response.tokenId, loggedIn: true, signedOut: false });
   }
   signedOut = () => {
-    this.setState({signedOut: true, loggedIn: false})
+    this.setState({signedOut: true, loggedIn: false, tokenId: ""})
   }
   render() {
     return (
